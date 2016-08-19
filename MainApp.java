@@ -26,6 +26,8 @@ public class MainApp extends javax.swing.JFrame {
     
     //initialize salesRep object
     SalesRep s = new SalesRep();
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -711,20 +713,20 @@ public class MainApp extends javax.swing.JFrame {
         //Make sure that entry exists
         String district;
         if (northButton.isSelected()) { //if north radio button is selected
-            district = "NORTH"; //set district to north
+            district = "North"; //set district to north
             s.setDistrict(district); //push to sales rep object
             districtError.setVisible(false); //hide error message
             //districtError.setVisible(false); //hide error message
         } else if (southButton.isSelected()) { //if south radio button is selected
-            district = "SOUTH"; //set district to south
+            district = "South"; //set district to south
             s.setDistrict(district); //push to sales rep object
             districtError.setVisible(false); //hide error message
         } else if (eastButton.isSelected()) { //if east radio button is selected
-            district = "EAST"; //set district to east
+            district = "East"; //set district to east
             s.setDistrict(district); //push to sales rep object
             districtError.setVisible(false); //hide error message
         } else if (westButton.isSelected()) { //if west radio button is selected
-            district = "WEST"; //set district to west
+            district = "West"; //set district to west
             s.setDistrict(district); //push to sales rep object
             districtError.setVisible(false); //hide error message
         } else { //if nothing is selected
@@ -736,15 +738,15 @@ public class MainApp extends javax.swing.JFrame {
         //Make sure that entry exists
         String contact;
         if (phoneButton.isSelected()) { //if phone radio button is selected
-            contact = "PHONE"; //set preferred contact to phone
+            contact = "Phone"; //set preferred contact to phone
             s.setContact(contact); //push to sales rep object
             contactError.setVisible(false); //hide error message
         } else if (emailButton.isSelected()) { //if email radio button is selected
-            contact = "EMAIL"; //set preferred contact to email
+            contact = "Email"; //set preferred contact to email
             s.setContact(contact); //push to sales rep object
             contactError.setVisible(false); //hide error message
         } else if (visitButton.isSelected()) { //if visit radio button is selected
-            contact = "VISIT"; //set preferred contact to visit
+            contact = "Visit"; //set preferred contact to visit
             s.setContact(contact); //push to sales rep object
             contactError.setVisible(false); //hide error message
         } else { //if nothing is selected
