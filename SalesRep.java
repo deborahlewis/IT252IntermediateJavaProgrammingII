@@ -93,15 +93,11 @@ public class SalesRep {
     //toString method to display object at the end of the MainApp.java program
     @Override
     public String toString() {
-        return "Sales Rep Id: " + repId 
-                + "\nFirst Name: " + firstName 
-                + "\nLast Name: " + lastName 
-                + "\n\nSupplies: $" + dollarFormat.format(supplies) 
-                + "\nBooks: $" + dollarFormat.format(books) 
-                + "\nPaper: $" + dollarFormat.format(paper)
-                + "\n\nSales District: " + district
-                + "\nPreferred Contact: " + contact;
-    }
+        return repId + " " + firstName + " " + lastName + " " 
+                + dollarFormat.format(supplies)  + " " 
+                + dollarFormat.format(books)  + " " 
+                + dollarFormat.format(paper) + " " + district.toUpperCase() + " " + contact + "\n";
+    } 
     
     
     
