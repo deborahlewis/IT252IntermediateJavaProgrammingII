@@ -1,9 +1,9 @@
 /*
  * Deborah Kronk-Lewis
  * IT252: Intermediate Java Programming II
- * Unit 1 IP
+ * Unit 2 IP
  */
-package IT252_Unit1;
+package it252unit2;
 
 //import statements to permit formatting of decimals
 import java.text.DecimalFormat;
@@ -90,6 +90,8 @@ public class SalesRep {
     //format doubles to show 2 decimal places like dollar amounts
     NumberFormat dollarFormat = new DecimalFormat("#0.00"); //done before displaying to ensure validity of any calculations that may be done later
     
+    //
+    
     //toString method to display object at the end of the MainApp.java program
     @Override
     public String toString() {
@@ -98,7 +100,5 @@ public class SalesRep {
                 + dollarFormat.format(books)  + " " 
                 + dollarFormat.format(paper) + " " + district.toUpperCase() + " " + contact + "\n";
     } 
-    
-    
     
 } //end salesRep class
