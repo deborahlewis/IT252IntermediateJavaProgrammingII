@@ -1,28 +1,24 @@
 /*
  * Deborah Kronk-Lewis
  * IT252: Intermediate Java Programming II
- * Unit 2 IP
  */
-package it252unit2;
+package collegesupplysurplus;
 
-//import statements to permit formatting of decimals
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 
 public class SalesRep {
     
-    //declare variables
     private int repId;
     private String firstName, lastName, district, contact;
     private double supplies, books, paper;
-    
-    //default constructor
+
+    //constructor
     public SalesRep() {
-        
     }
-    
-    //get & set methods
+
+    //getters and setters
     public int getRepId() {
         return repId;
     }
@@ -46,7 +42,23 @@ public class SalesRep {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
     public double getSupplies() {
         return supplies;
     }
@@ -71,34 +83,18 @@ public class SalesRep {
         this.paper = paper;
     }
     
-    public String getDistrict() {
-        return district;
-    }
-    
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-    
-    public String getContact() {
-        return contact;
-    }
-    
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
     //format doubles to show 2 decimal places like dollar amounts
-    NumberFormat dollarFormat = new DecimalFormat("#0.00"); //done before displaying to ensure validity of any calculations that may be done later
-    
-    //
-    
-    //toString method to display object at the end of the MainApp.java program
+    NumberFormat dollar = new DecimalFormat("#0.00");
+
+    //toString method
     @Override
     public String toString() {
         return repId + " " + firstName + " " + lastName + " " 
-                + dollarFormat.format(supplies)  + " " 
-                + dollarFormat.format(books)  + " " 
-                + dollarFormat.format(paper) + " " + district.toUpperCase() + " " + contact + "\n";
+                + "SUPPLIES " + dollar.format(supplies)  + " " 
+                + "BOOKS " + dollar.format(books)  + " " 
+                + "PAPER " + dollar.format(paper) + " " + district.toUpperCase() + " " + contact + "\n";
     } 
     
-} //end salesRep class
+    
+    
+} //end sales rep class
