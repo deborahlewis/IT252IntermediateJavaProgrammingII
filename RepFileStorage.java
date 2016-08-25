@@ -39,7 +39,7 @@ public class RepFileStorage {
             }
             
             //give user feedback
-            JOptionPane.showMessageDialog(null, "Entry recorded:\n" + s); 
+            JOptionPane.showMessageDialog(null, "Entry saved to salesrep.txt file:\n" + s); 
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Error writing to file");
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
