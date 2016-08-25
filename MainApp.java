@@ -4,16 +4,7 @@
  */
 package collegesupplysurplus;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
 
 public class MainApp extends javax.swing.JFrame {
 
@@ -678,9 +669,15 @@ public class MainApp extends javax.swing.JFrame {
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
         /*
          * WHEN EXIT BUTTON IS PRESSED
-         * Close application
+         * Ask user if they're sure they want to quit
+         * If yes, close application
+         * If no, close JOptionPane window & continue with program
         */
-        System.exit(0); //close application
+        
+        int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit?", "Confirm", JOptionPane.YES_NO_OPTION);
+                if(result == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                } 
     }//GEN-LAST:event_quitButtonActionPerformed
 
     /**
