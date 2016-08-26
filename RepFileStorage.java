@@ -26,7 +26,9 @@ public class RepFileStorage {
                 //format doubles to show 2 decimal places like dollar amounts
                 NumberFormat dollar = new DecimalFormat("#0.00");
                 //write to file
-                fileOut.write("" + s.getRepId() //rep id
+                fileOut.write("" + s); //print SalesRep object (pulled from the toString method
+        
+        /*("" + s.getRepId() //rep id
                         + " " + s.getFirstName() //space firstName
                         + " " + s.getLastName() //space lastName
                         + " SUPPLIES " + dollar.format(s.getSupplies()) //space supplies in dollar format
@@ -35,11 +37,13 @@ public class RepFileStorage {
                         + " " + s.getDistrict().toUpperCase() //space district in upper case
                         + " " + s.getContact());
                 fileOut.newLine(); //next entry begins on new line
-                //save & close file
-            }
-            
+                
+                */
+                fileOut.close();//save & close file
+            }            
             //give user feedback
             JOptionPane.showMessageDialog(null, "Entry saved to salesrep.txt file:\n" + s); 
+            
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Error writing to file");
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
