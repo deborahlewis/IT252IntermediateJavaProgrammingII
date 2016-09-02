@@ -53,18 +53,18 @@ public class RepFileReader {
         
         SalesRep s = new SalesRep(); //create new salesrep object
         
-        s.setRepId(Integer.parseInt(st.nextToken().trim()));
-        s.setFirstName(st.nextToken().trim());
-        s.setLastName(st.nextToken().trim());
-        label = st.nextToken().trim();
-        s.setSupplies(Double.parseDouble(st.nextToken().trim()));
-        label = st.nextToken().trim();
-        s.setBooks(Double.parseDouble(st.nextToken().trim()));
-        label = st.nextToken().trim();
-        s.setPaper(Double.parseDouble(st.nextToken().trim()));
-        s.setDistrict(st.nextToken().trim());
-        s.setContact(st.nextToken().trim());
-        return s;
+        s.setRepId(Integer.parseInt(st.nextToken().trim())); //trim salesRep string and convert to int to set as repId
+        s.setFirstName(st.nextToken().trim()); //trim first name and set as firstName
+        s.setLastName(st.nextToken().trim()); //trim last name and set as last name
+        label = st.nextToken().trim(); //acknowledge supplies label
+        s.setSupplies(Double.parseDouble(st.nextToken().trim())); //trim supplies string and convert to double to set as supplies total
+        label = st.nextToken().trim(); //acknowledge books label
+        s.setBooks(Double.parseDouble(st.nextToken().trim())); //trim books string and convert to double to use as books total
+        label = st.nextToken().trim(); //acknowledge paper label
+        s.setPaper(Double.parseDouble(st.nextToken().trim())); //trim paper string and convert to double to use as paper total
+        s.setDistrict(st.nextToken().trim()); //trim district input and use as district
+        s.setContact(st.nextToken().trim()); //trim contact input and use as contact
+        return s; //return SalesRep object
         
     }
     

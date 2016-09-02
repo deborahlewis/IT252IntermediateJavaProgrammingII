@@ -4,7 +4,9 @@
  */
 package collegesupplysurplus;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,6 +17,7 @@ public class MainApp extends javax.swing.JFrame {
     //initialize form and error messages
     public MainApp() {
         initComponents();
+        outputTitle.setText("Output");
         idError.setVisible(false); //do not show error at program start
         firstNameError.setVisible(false); //do not show error at program start
         lastNameError.setVisible(false); //do not show error at program start
@@ -75,8 +78,11 @@ public class MainApp extends javax.swing.JFrame {
         outputPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputTextarea = new javax.swing.JTextArea();
+        outputTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        mainAppPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         titlePanel.setBackground(new java.awt.Color(204, 204, 204));
         titlePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "College Surplus Sales", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, new java.awt.Font("Calibri", 1, 24))); // NOI18N
@@ -449,35 +455,44 @@ public class MainApp extends javax.swing.JFrame {
         outputTextarea.setRows(5);
         jScrollPane1.setViewportView(outputTextarea);
 
+        outputTitle.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        outputTitle.setText("Output");
+
         javax.swing.GroupLayout mainAppPanelLayout = new javax.swing.GroupLayout(mainAppPanel);
         mainAppPanel.setLayout(mainAppPanelLayout);
         mainAppPanelLayout.setHorizontalGroup(
             mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainAppPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(outputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainAppPanelLayout.createSequentialGroup()
-                                .addComponent(districtPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(contactPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(mainAppPanelLayout.createSequentialGroup()
-                                .addComponent(salesRepPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(salesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(218, 218, 218))
             .addGroup(mainAppPanelLayout.createSequentialGroup()
                 .addGap(209, 209, 209)
                 .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(mainAppPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainAppPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(outputTitle)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(mainAppPanelLayout.createSequentialGroup()
+                        .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(mainAppPanelLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(outputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(mainAppPanelLayout.createSequentialGroup()
+                                .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mainAppPanelLayout.createSequentialGroup()
+                                        .addComponent(districtPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(contactPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(mainAppPanelLayout.createSequentialGroup()
+                                        .addComponent(salesRepPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(salesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(218, 218, 218))))
         );
         mainAppPanelLayout.setVerticalGroup(
             mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -501,7 +516,9 @@ public class MainApp extends javax.swing.JFrame {
                         .addGap(181, 181, 181)
                         .addComponent(outputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(5, 5, 5)
+                        .addComponent(outputTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -545,10 +562,10 @@ public class MainApp extends javax.swing.JFrame {
                 idError.setText("* Required"); //let user know that field is required
                 allDataReceived = false; //if all data is not received do not show confirm message
             } else {
-            //Populate valid entry into SalesRep object    
-            int repId = Integer.parseInt(repIdString.trim()); //convert rep id to an integer and trim whitespace
-            s.setRepId(repId); //add integer value to SalesRep object
-            idError.setVisible(false); //hide error message
+                //Populate valid entry into SalesRep object    
+                int repId = Integer.parseInt(repIdString.trim()); //convert rep id to an integer and trim whitespace
+                s.setRepId(repId); //add integer value to SalesRep object
+                idError.setVisible(false); //hide error message
             }
             //Make sure that entry is an integer
         } catch (Exception e) { //if it'salesRep not an integer
@@ -658,7 +675,6 @@ public class MainApp extends javax.swing.JFrame {
             district = "North"; //set district to north
             s.setDistrict(district); //push to sales rep object
             districtError.setVisible(false); //hide error message
-            //districtError.setVisible(false); //hide error message
         } else if (southButton.isSelected()) { //if south radio button is selected
             district = "South"; //set district to south
             s.setDistrict(district); //push to sales rep object
@@ -699,7 +715,8 @@ public class MainApp extends javax.swing.JFrame {
         if (allDataReceived) {
             RepFileWriter rfs = new RepFileWriter(); //create RepFileWriter Object
             rfs.writeSalesRep(s); //write SalesRep Object to file
-            outputTextarea.setText("Successful Entry:\n" + s.toString());
+            outputTitle.setText("Successful Entry");
+            outputTextarea.setText(s.toString());
             
             repIdInput.setText(""); //empty field after successful entry
             firstNameInput.setText(""); //empty field after successful entry
@@ -742,17 +759,32 @@ public class MainApp extends javax.swing.JFrame {
         outputTextarea.setText(""); //clear text area from any new entries
         
         RepFileReader rfr = new RepFileReader(); //create RepFileReader Object
+        
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter("stars.txt"); //create writer for stars.txt
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(this, "File not found."); //display error
+            Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex); //log error
+        }
+            writer.print(""); //clear old data from stars.txt
+            writer.close(); //close file
         try {
             List<SalesRep> SalesRep = rfr.readSalesRep("salesrep.txt");  //read sales rep array
+            
             for (SalesRep s : SalesRep) { //loop through array
                 if ( (s.getSupplies() + s.getBooks() + s.getPaper()) >= 8000.0 ) { //if total of supplies, books, and paper is >= 8,000
-                outputTextarea.append(s.toString() + "\n"); //display
-                //write to stars file
-                }
+                    
+                    StarsFileWriter sfw = new StarsFileWriter(); //create StarsWriter Object
+                    
+                    sfw.writeStars(s); //write SalesRep Object to stars.txt file
+                    outputTitle.setText("Displaying Stars"); //change title above textbox
+                    outputTextarea.append(s.toString() + "\n"); //display stars
+                } 
             }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Unable to open file.");
-            Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) { //catch exception
+            JOptionPane.showMessageDialog(this, "Unable to open file."); //display error
+            Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex); //log error
         }
         
         
@@ -824,6 +856,7 @@ public class MainApp extends javax.swing.JFrame {
     private javax.swing.JRadioButton northButton;
     private javax.swing.JPanel outputPanel;
     private javax.swing.JTextArea outputTextarea;
+    private javax.swing.JLabel outputTitle;
     private javax.swing.JLabel paperError;
     private javax.swing.JTextField paperInput;
     private javax.swing.JLabel paperLabel;
