@@ -75,10 +75,11 @@ public class MainApp extends javax.swing.JFrame {
         evaluateButton = new javax.swing.JButton();
         enterButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
+        displayButton = new javax.swing.JButton();
         outputPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        outputTextarea = new javax.swing.JTextArea();
         outputTitle = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        outputTextarea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -163,7 +164,7 @@ public class MainApp extends javax.swing.JFrame {
         salesRepPanelLayout.setVerticalGroup(
             salesRepPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(salesRepPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(salesRepPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(repIdInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(repIdLabel))
@@ -180,8 +181,7 @@ public class MainApp extends javax.swing.JFrame {
                     .addComponent(lastNameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lastNameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lastNameError)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lastNameError))
         );
 
         repIdInput.getAccessibleContext().setAccessibleName("");
@@ -417,16 +417,27 @@ public class MainApp extends javax.swing.JFrame {
             }
         });
 
+        displayButton.setBackground(new java.awt.Color(204, 204, 204));
+        displayButton.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        displayButton.setText("Display");
+        displayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(displayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(evaluateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(212, 212, 212))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -436,63 +447,69 @@ public class MainApp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(evaluateButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(displayButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(quitButton)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        outputTitle.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        outputTitle.setText("Output");
+
+        outputTextarea.setColumns(20);
+        outputTextarea.setRows(5);
+        jScrollPane2.setViewportView(outputTextarea);
 
         javax.swing.GroupLayout outputPanelLayout = new javax.swing.GroupLayout(outputPanel);
         outputPanel.setLayout(outputPanelLayout);
         outputPanelLayout.setHorizontalGroup(
             outputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(outputPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(outputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+                    .addGroup(outputPanelLayout.createSequentialGroup()
+                        .addComponent(outputTitle)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         outputPanelLayout.setVerticalGroup(
             outputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGroup(outputPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(outputTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
-
-        outputTextarea.setColumns(20);
-        outputTextarea.setRows(5);
-        jScrollPane1.setViewportView(outputTextarea);
-
-        outputTitle.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        outputTitle.setText("Output");
 
         javax.swing.GroupLayout mainAppPanelLayout = new javax.swing.GroupLayout(mainAppPanel);
         mainAppPanel.setLayout(mainAppPanelLayout);
         mainAppPanelLayout.setHorizontalGroup(
             mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainAppPanelLayout.createSequentialGroup()
-                .addGap(209, 209, 209)
-                .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(mainAppPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainAppPanelLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(outputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(mainAppPanelLayout.createSequentialGroup()
+                            .addGap(209, 209, 209)
+                            .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(120, 120, 120)))
                     .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(outputTitle)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainAppPanelLayout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(districtPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(outputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(contactPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mainAppPanelLayout.createSequentialGroup()
-                                .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                                        .addComponent(districtPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(contactPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                                        .addComponent(salesRepPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(salesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(salesRepPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(218, 218, 218))))
+                                .addComponent(salesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         mainAppPanelLayout.setVerticalGroup(
             mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,27 +517,18 @@ public class MainApp extends javax.swing.JFrame {
                 .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(controlPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(salesRepPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(salesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(districtPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(contactPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(controlPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(outputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(mainAppPanelLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(outputTitle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(salesRepPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(salesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addGroup(mainAppPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(contactPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(districtPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(outputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -529,32 +537,46 @@ public class MainApp extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainAppPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(mainAppPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(mainAppPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addComponent(mainAppPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        /*
+        * WHEN EXIT BUTTON IS PRESSED
+        * Ask user if they're sure they want to quit
+        * If yes, close application
+        * If no, close JOptionPane window & continue with program
+        */
+
+        int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit?", "Confirm", JOptionPane.YES_NO_OPTION);
+        if(result == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_quitButtonActionPerformed
+
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         /*
-         * WHEN THE ENTER BUTTON IS PRESSED
-         * 1. Validate input
-         * 2. If all valid data is received, send to file
+        * WHEN THE ENTER BUTTON IS PRESSED
+        * 1. Validate input
+        * 2. If all valid data is received, send to file
         */
-        
+
         // Set data vaidator to true
         boolean allDataReceived = true; //initialize as true
-        
-        //Accept repId entry      
-        String repIdString = repIdInput.getText(); 
-        
+
+        //Accept repId entry
+        String repIdString = repIdInput.getText();
+
         //Make sure that entry exists
         try {
             if (repIdString.trim().length() == 0) { //if field with whitespace removed is empty
@@ -562,7 +584,7 @@ public class MainApp extends javax.swing.JFrame {
                 idError.setText("* Required"); //let user know that field is required
                 allDataReceived = false; //if all data is not received do not show confirm message
             } else {
-                //Populate valid entry into SalesRep object    
+                //Populate valid entry into SalesRep object
                 int repId = Integer.parseInt(repIdString.trim()); //convert rep id to an integer and trim whitespace
                 s.setRepId(repId); //add integer value to SalesRep object
                 idError.setVisible(false); //hide error message
@@ -572,11 +594,11 @@ public class MainApp extends javax.swing.JFrame {
             idError.setVisible(true); //display error message
             idError.setText("* Id must be an integer"); //let user know that field must be an int
             allDataReceived = false; //if all data is not received do not show confirm message
-        } 
-        
+        }
+
         //Accept firstName entry
         String firstName = firstNameInput.getText(); //accept first name entry
-        
+
         //Make sure that entry exists
         if (firstName.trim().length() == 0) { //if field with whitespace removed is empty
             firstNameError.setVisible(true); //display error message
@@ -587,10 +609,10 @@ public class MainApp extends javax.swing.JFrame {
             s.setFirstName(firstName.trim()); //add trimmed firstName string to salesRep object
             firstNameError.setVisible(false); //hide error message
         }
-        
+
         //Accept lastName entry
         String lastName = lastNameInput.getText(); //accept last name entry
-        
+
         //Make sure that entry exists
         if (lastName.trim().length() == 0) { //if field with whitespace removed is empty
             lastNameError.setVisible(true); //display error message
@@ -601,21 +623,21 @@ public class MainApp extends javax.swing.JFrame {
             s.setLastName(lastName.trim()); //add trimmed lastName string to salesRep object
             lastNameError.setVisible(false); //hide error message
         }
-        
+
         //Accept supplies entry
         String suppliesString = suppliesInput.getText(); //accept supplies String entry
-        
+
         //Make sure that entry exists
         try {
             if (suppliesString.trim().length() == 0) { //if field with whitespace removed is empty
                 suppliesError.setVisible(true); //display error message
                 suppliesError.setText("* Required or enter 0"); //let user know that field is required
                 allDataReceived = false; //if all data is not received do not show confirm message
-        } else {
-            //Populate valid entry into SalesRep object    
-            double supplies = Double.parseDouble(suppliesString); //convert supplies to a double
-            s.setSupplies(supplies); //add supplies entry to salesRep object
-            suppliesError.setVisible(false); //hide error message
+            } else {
+                //Populate valid entry into SalesRep object
+                double supplies = Double.parseDouble(suppliesString); //convert supplies to a double
+                s.setSupplies(supplies); //add supplies entry to salesRep object
+                suppliesError.setVisible(false); //hide error message
             }
             //Make sure that entry is a double
         } catch (Exception e) { //if it'salesRep not a double
@@ -623,21 +645,21 @@ public class MainApp extends javax.swing.JFrame {
             suppliesError.setText("* Must be a double"); //let user know that value must be a double
             allDataReceived = false; //if all data is not received do not show confirm message
         }
-        
+
         //Accept books entry
         String booksString = booksInput.getText(); //accept books String entry
-        
+
         //Make sure that entry exists
         try {
             if (booksString.trim().length() == 0) { //if field with whitespace removed is empty
                 booksError.setVisible(true); //display error message
                 booksError.setText("* Required or enter 0"); //let user know that field is required
                 allDataReceived = false; //if all data is not received do not show confirm message
-        } else {
-            //Populate valid entry into SalesRep object
-            double books = Double.parseDouble(booksString); //convert books to a double
-            s.setBooks(books); // add books entry to salesRep object
-            booksError.setVisible(false); //hide error message
+            } else {
+                //Populate valid entry into SalesRep object
+                double books = Double.parseDouble(booksString); //convert books to a double
+                s.setBooks(books); // add books entry to salesRep object
+                booksError.setVisible(false); //hide error message
             }
             //Make sure that entry is a double
         } catch (Exception e) { //if its not a double
@@ -648,26 +670,26 @@ public class MainApp extends javax.swing.JFrame {
 
         //Accept apaper entry
         String paperString = paperInput.getText(); //accept paperString String entry
-        
+
         //Make sure that entry exists
         try {
             if (paperString.trim().length() == 0) { //if field with whitespace removed is empty
                 paperError.setVisible(true); //display error message
                 paperError.setText("* Required or enter 0"); //let user know that field is required
                 allDataReceived = false; //if all data is not received do not show confirm message
-        } else {
-            //Populate valid entry into SalesRep object
-            double paper = Double.parseDouble(paperString); //convert paper to a double
-            s.setPaper(paper); // add paper entry to salesRep object
-            paperError.setVisible(false); //hide error message
+            } else {
+                //Populate valid entry into SalesRep object
+                double paper = Double.parseDouble(paperString); //convert paper to a double
+                s.setPaper(paper); // add paper entry to salesRep object
+                paperError.setVisible(false); //hide error message
             }
-          //Make sure that entry is a double
+            //Make sure that entry is a double
         } catch (Exception e) { //if its not a double
             paperError.setVisible(true); //display error message
             paperError.setText("* Must be a double"); //let user know that value must be a double
             allDataReceived = false; //if all data is not received do not show confirm message
         }
-        
+
         // Accept salesDistrict entry
         //Make sure that entry exists
         String district;
@@ -691,7 +713,7 @@ public class MainApp extends javax.swing.JFrame {
             allDataReceived = false; //all data is not received
             districtError.setVisible(true); //let user know field is required
         }
-        
+
         //Accept preferred contact method entry
         //Make sure that entry exists
         String contact;
@@ -711,13 +733,13 @@ public class MainApp extends javax.swing.JFrame {
             allDataReceived = false; //all data is not received
             contactError.setVisible(true); //let user know field is required
         }
-        
+
         if (allDataReceived) {
             RepFileWriter rfs = new RepFileWriter(); //create RepFileWriter Object
             rfs.writeSalesRep(s); //write SalesRep Object to file
             outputTitle.setText("Successful Entry");
             outputTextarea.setText(s.toString());
-            
+
             repIdInput.setText(""); //empty field after successful entry
             firstNameInput.setText(""); //empty field after successful entry
             lastNameInput.setText(""); //empty field after successful entry
@@ -726,40 +748,25 @@ public class MainApp extends javax.swing.JFrame {
             paperInput.setText(""); //empty field after successful entry
             districtButtonGroup.clearSelection(); //clear button group selection
             contactButtonGroup.clearSelection(); //clear button group selection
-            
+
         }
 
-        
     }//GEN-LAST:event_enterButtonActionPerformed
-
-    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
-        /*
-         * WHEN EXIT BUTTON IS PRESSED
-         * Ask user if they're sure they want to quit
-         * If yes, close application
-         * If no, close JOptionPane window & continue with program
-        */
-        
-        int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit?", "Confirm", JOptionPane.YES_NO_OPTION);
-                if(result == JOptionPane.YES_OPTION) {
-                    System.exit(0);
-                } 
-    }//GEN-LAST:event_quitButtonActionPerformed
 
     private void evaluateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evaluateButtonActionPerformed
         /*
-         * WHEN EVALUATE BUTTON IS PRESSED
-         * Clear any prior entries from display
-         * Read SalesRep.txt file
-         * validate and populate input
-         * calculate total sales for supplies, books, paper
-         * If total is >= 8,000 push person to stars.txt
+        * WHEN EVALUATE BUTTON IS PRESSED
+        * Clear any prior entries from display
+        * Read SalesRep.txt file
+        * validate and populate input
+        * calculate total sales for supplies, books, paper
+        * If total is >= 8,000 push person to stars.txt
         */
-        
+
         outputTextarea.setText(""); //clear text area from any new entries
-        
+
         RepFileReader rfr = new RepFileReader(); //create RepFileReader Object
-        
+
         PrintWriter writer = null;
         try {
             writer = new PrintWriter("stars.txt"); //create writer for stars.txt
@@ -767,32 +774,31 @@ public class MainApp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "File not found."); //display error
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex); //log error
         }
-            writer.print(""); //clear old data from stars.txt
-            writer.close(); //close file
+        writer.print(""); //clear old data from stars.txt
+        writer.close(); //close file
         try {
             List<SalesRep> SalesRep = rfr.readSalesRep("salesrep.txt");  //read sales rep array
-            
+
             for (SalesRep s : SalesRep) { //loop through array
                 if ( (s.getSupplies() + s.getBooks() + s.getPaper()) >= 8000.0 ) { //if total of supplies, books, and paper is >= 8,000
-                    
+
                     StarsFileWriter sfw = new StarsFileWriter(); //create StarsWriter Object
-                    
+
                     sfw.writeStars(s); //write SalesRep Object to stars.txt file
                     outputTitle.setText("Displaying Stars"); //change title above textbox
                     outputTextarea.append(s.toString() + "\n"); //display stars
-                } 
+                }
             }
         } catch (IOException ex) { //catch exception
             JOptionPane.showMessageDialog(this, "Unable to open file."); //display error
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex); //log error
         }
-        
-        
-        
-        
 
-        
     }//GEN-LAST:event_evaluateButtonActionPerformed
+
+    private void displayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_displayButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -837,6 +843,7 @@ public class MainApp extends javax.swing.JFrame {
     private javax.swing.JLabel contactError;
     private javax.swing.JPanel contactPanel;
     private javax.swing.JPanel controlPanel;
+    private javax.swing.JButton displayButton;
     private javax.swing.ButtonGroup districtButtonGroup;
     private javax.swing.JLabel districtError;
     private javax.swing.JPanel districtPanel;
@@ -848,7 +855,7 @@ public class MainApp extends javax.swing.JFrame {
     private javax.swing.JTextField firstNameInput;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JLabel idError;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lastNameError;
     private javax.swing.JTextField lastNameInput;
     private javax.swing.JLabel lastNameLabel;

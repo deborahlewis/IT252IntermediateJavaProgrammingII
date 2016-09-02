@@ -31,16 +31,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="mainAppPanel" min="-2" pref="709" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="mainAppPanel" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="mainAppPanel" min="-2" pref="617" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+              <Component id="mainAppPanel" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,46 +59,36 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
-                  <Component id="titlePanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="outputTitle" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="outputPanel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                              <Component id="titlePanel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="657" max="-2" attributes="0"/>
+                                  <Component id="districtPanel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="outputPanel" max="32767" attributes="0"/>
+                                  <Component id="contactPanel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="districtPanel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="contactPanel" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="salesRepPanel" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="salesPanel" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="salesRepPanel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="salesPanel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="controlPanel" min="-2" pref="127" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace pref="15" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -108,35 +98,22 @@
                   <Component id="titlePanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="controlPanel" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="salesRepPanel" max="32767" attributes="0"/>
-                              <Component id="salesPanel" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="districtPanel" max="32767" attributes="0"/>
-                              <Component id="contactPanel" max="32767" attributes="0"/>
+                              <Component id="salesRepPanel" max="32767" attributes="0"/>
+                              <Component id="salesPanel" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="11" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="contactPanel" min="-2" max="-2" attributes="0"/>
+                              <Component id="districtPanel" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="controlPanel" min="-2" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
-                          <Component id="outputPanel" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                          <Component id="outputTitle" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="225" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="outputPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -221,7 +198,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="repIdInput" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="repIdLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -242,7 +219,6 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lastNameError" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -781,13 +757,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="quitButton" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="displayButton" min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="evaluateButton" min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="enterButton" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -799,8 +777,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="evaluateButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="displayButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="quitButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -848,6 +828,20 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quitButtonActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="displayButton">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Calibri" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Display"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayButtonActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="outputPanel">
@@ -855,39 +849,57 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane2" pref="641" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="outputTitle" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="202" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="outputTitle" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="205" max="-2" attributes="0"/>
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
-        </Container>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="outputTextarea">
+            <Component class="javax.swing.JLabel" name="outputTitle">
               <Properties>
-                <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="5"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Calibri" size="24" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Output"/>
               </Properties>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="outputTextarea">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="outputTitle">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Calibri" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Output"/>
-          </Properties>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
