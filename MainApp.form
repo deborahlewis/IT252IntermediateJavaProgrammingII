@@ -795,6 +795,7 @@
                   <Font name="Calibri" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Evaluate"/>
+                <Property name="toolTipText" type="java.lang.String" value="Update/View Top Sellers"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="evaluateButtonActionPerformed"/>
@@ -837,6 +838,7 @@
                   <Font name="Calibri" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Display"/>
+                <Property name="toolTipText" type="java.lang.String" value="View All Sales"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayButtonActionPerformed"/>

@@ -393,6 +393,7 @@ public class MainApp extends javax.swing.JFrame {
         evaluateButton.setBackground(new java.awt.Color(204, 204, 204));
         evaluateButton.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         evaluateButton.setText("Evaluate");
+        evaluateButton.setToolTipText("Update/View Top Sellers");
         evaluateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 evaluateButtonActionPerformed(evt);
@@ -420,6 +421,7 @@ public class MainApp extends javax.swing.JFrame {
         displayButton.setBackground(new java.awt.Color(204, 204, 204));
         displayButton.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         displayButton.setText("Display");
+        displayButton.setToolTipText("View All Sales");
         displayButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayButtonActionPerformed(evt);
@@ -761,6 +763,7 @@ public class MainApp extends javax.swing.JFrame {
         * validate and populate input
         * calculate total sales for supplies, books, paper
         * If total is >= 8,000 push person to stars.txt
+        * Display stars.txt
         */
 
         outputTextarea.setText(""); //clear text area from any new entries
@@ -797,7 +800,26 @@ public class MainApp extends javax.swing.JFrame {
     }//GEN-LAST:event_evaluateButtonActionPerformed
 
     private void displayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayButtonActionPerformed
-        // TODO add your handling code here:
+        /*
+         * WHEN THE DISPLAY BUTTON IS PRESSED
+         * 1. Clear text area of prior entries
+         * 2. Display SalesRep.txt
+        */
+        
+        outputTextarea.setText(""); //clear text area from any new entries
+
+        RepFileReader rfr = new RepFileReader(); //create RepFileReader Object
+        try {
+            List<SalesRep> SalesRep = rfr.readSalesRep("salesrep.txt");  //read sales rep array
+
+            for (SalesRep s : SalesRep) { //loop through array
+                outputTitle.setText("Displaying All Sales"); //change title above textbox
+                outputTextarea.append(s.toString() + "\n"); //display stars
+            }
+        } catch (IOException ex) { //catch exception
+            JOptionPane.showMessageDialog(this, "Unable to open file."); //display error
+            Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex); //log error
+        }
     }//GEN-LAST:event_displayButtonActionPerformed
 
     /**
